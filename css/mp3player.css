@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-player{
+    width: 350px;
+    height: 550px;
+    background-color: rgb(0, 255, 179);
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(47, 206, 249, 0.8);
+    padding: 30px;
+    color: rgb(187, 158, 77);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.music-name, .artist-name {
+    text-align: center;
+    text-transform: capitalize;
+    color: aliceblue;
+}
+
+.music-name {
+    font-size: 40px;
+    font-weight:  500;
+    margin-bottom: 15px;
+}
+
+.artist-name {
+    font-size: 20px;
+}
+
+.disk {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-image: url('../images/cover\ 1.png');
+    background-size: cover;
+    box-shadow: 0 0 0 5px;
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk-play {
+    animation-play-state: running;
+}
+
+.disk::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(187, 158, 77);
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    width:  100%;
+    height:  30px;
+    border-radius: 10px;
+    background-color: rgb(208, 98, 29);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400 blueviolet;
+}
+
+.current-time, .song-duration {
+    font-size: 14px;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;
+}
+
+.controls {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.play-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(42, 110, 165);
+    cursor: pointer;
+    border: none;
+}
+
+.play-btn span{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: azure;
+    transition: 0.5s;
+}
